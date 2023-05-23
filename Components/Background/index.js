@@ -95,7 +95,7 @@ function Index() {
         />
         <Tools
           src="1.png"
-          className="animate__animated animate__fadeInDown animate__slow"
+          className="animate__animated animate__fadeInDown"
           alt="Image"
         />
         <Tools
@@ -125,7 +125,6 @@ function Index() {
       <Main1>
         <Img src="img1.png" alt="Image" />
       </Main1>
-
       <Line>
         <img src="lines.png" alt="Line" height="600" />
       </Line>

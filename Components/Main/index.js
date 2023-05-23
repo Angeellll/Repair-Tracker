@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "styled-components";
+import { useRouter } from 'next/router';
 
 const Wrapper = styled.div`
   display: flex;
@@ -33,12 +34,10 @@ const Subtitle = styled.h5`
   font-size: 40px;
   color: #03045e;
   font-family: Quicksand;
-  margin-top: -90px;
+  margin-bottom: 0px;
 `;
 
-const Line = styled.img`
-  margin-top: -95px;
-`;
+const Line = styled.img``;
 
 const InputDiv = styled.div`
   display: flex;
@@ -89,29 +88,50 @@ const Button = styled.button`
   }
 `;
 
-function Index() {
+const First = styled.div`
+  margin-top: -90px;
+`;
+
+const Index = () => {
+  const router = useRouter();
+
+  const handleButtonClick = () => {
+    router.push("/Progress")
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <Wrapper>
       <Titles>
         <Title className="animate__animated animate__fadeIn animate__slow">
           Connection Power Tools
         </Title>
-        <Subtitle className="animate__animated animate__fadeIn animate__slow">
-          Repair Tracker
-        </Subtitle>
-        <Line
-          className="animate__animated animate__fadeIn animate__faster"
-          src="line2.png"
-        />
-        <InputDiv className="animate__animated animate__fadeIn animate__slow">
-          <form>
-            <Input placeholder="Input reference number" />
-            <Button>CHECK PROGRESS</Button>
-          </form>
-        </InputDiv>
+        <First>
+          <Subtitle className="animate__animated animate__fadeIn animate__slow">
+            Repair Tracker
+          </Subtitle>
+          <Line
+            className="animate__animated animate__fadeIn animate__faster"
+            src="line2.png"
+          />
+          <InputDiv className="animate__animated animate__fadeIn animate__slow">
+            <form
+              
+              onSubmit={handleSubmit}
+              autoComplete="off"
+            >
+              <Input placeholder="Input reference number" />
+              <Button onClick={handleButtonClick} >CHECK PROGRESS</Button>
+            </form>
+          </InputDiv>
+        </First>
       </Titles>
+      
     </Wrapper>
   );
-}
+};
 
 export default Index;
