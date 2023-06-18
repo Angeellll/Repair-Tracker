@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
 import { useRouter } from 'next/router';
+import Chatbot from "../Chatbot";
 
 const Wrapper = styled.div`
   display: flex;
@@ -129,7 +130,6 @@ const Index = () => {
           </InputDiv>
         </First>
       </Titles>
-      
     </Wrapper>
   );
 };

@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 import CircularProgressBar from "./Circle";
 import Card from "./Card"
 import SeeMore from "./See";
+import Chatbot from "../Chatbot";
 
 
 const Wrapper = styled.div`
@@ -44,6 +45,12 @@ const Img = styled.img`
   height: 300px;
 `;
 
+const Cb = styled.div`
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+`;
+
 function Progress() {
 
   const progress = 5;
@@ -61,6 +68,9 @@ function Progress() {
         </Ticket>
         <SeeMore/>
       </Titles>
+      <Cb>
+        <Chatbot />
+      </Cb>
     </Wrapper>
   );
 }
