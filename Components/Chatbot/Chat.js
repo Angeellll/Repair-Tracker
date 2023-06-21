@@ -143,7 +143,7 @@ const Modal = ({ isOpen, onClose }) => {
             <Option>Status</Option>
           </OContainer>
           <OContainer>
-            <Option>Repair</Option>
+            <Option>Repair</Option> 
           </OContainer>
           <OContainer>
             <Option>Openning time</Option>
