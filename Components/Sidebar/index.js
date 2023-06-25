@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 import { Icon } from "@iconify/react";
 import Chat from "../Chat";
 import Requests from "../Requests";
+import Trash from "../Trash";
 
 const Wrapper = styled.div`
   display: grid;
@@ -103,17 +104,17 @@ const Container = styled.div`
   border: 3px solid #90e0ef;
   box-shadow: 0px 10px 30px rgba(17, 38, 146, 0.05);
   border-radius: 20px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
 `;
 
 function index() {
   const [isButtonClicked, setButtonClicked] = useState(false);
 
-  const handleButtonClick = () => {
-    setButtonClicked(true);
-  };
-
-  const handleHide = () => {
-    setButtonClicked(false);
+  
+  const handleButtonClick = (file) => {
+    setButtonClicked(file);
   };
 
   return (
@@ -151,7 +152,7 @@ function index() {
           Add Repair Request
         </AddClient>
         <Option>
-          <Choice  onClick={() => handleButtonClick('requests')}>
+          <Choice onClick={() => handleButtonClick("requests")}>
             <span
               style={{
                 width: "50px",
@@ -163,7 +164,7 @@ function index() {
             </span>
             Repair Request
           </Choice>
-          <Choice onClick={() => handleButtonClick('chats')}>
+          <Choice onClick={() => handleButtonClick("chats")}>
             <span
               style={{
                 width: "50px",
@@ -175,7 +176,7 @@ function index() {
             </span>
             Chatbot
           </Choice>
-          <Choice>
+          <Choice onClick={() => handleButtonClick("trash")}>
             <span
               style={{
                 width: "50px",
@@ -191,14 +192,20 @@ function index() {
       </SideMenu>
       <Content>
         <Container>
-          {isButtonClicked === 'requests' && (
+          
+          {isButtonClicked === "requests" && (
+            <>
+              <Requests></Requests>
+            </>
+          )}
+          {isButtonClicked === "chats" && (
             <>
               <Chat></Chat>
             </>
           )}
-          {isButtonClicked === 'chats' && (
+          {isButtonClicked === "trash" && (
             <>
-              <Requests></Requests>
+              <Trash></Trash>
             </>
           )}
         </Container>

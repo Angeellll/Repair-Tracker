@@ -126,7 +126,7 @@ const Modal = ({ isOpen, onClose }) => {
 
         <Convo>
           <CContainer>
-            <Option>U need to calm down oh oh ohhhh you need to calm dowwn your being to loudd oooh ooohh ohhh</Option>
+            <Option>Hello! Do you have any question?</Option>
           </CContainer>
         </Convo>
         <Input>
@@ -143,7 +143,7 @@ const Modal = ({ isOpen, onClose }) => {
             <Option>Status</Option>
           </OContainer>
           <OContainer>
-            <Option>Repair</Option> 
+            <Option>Repair</Option>
           </OContainer>
           <OContainer>
             <Option>Openning time</Option>
